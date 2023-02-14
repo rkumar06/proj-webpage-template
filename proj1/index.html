@@ -72,9 +72,25 @@
 </div>
 
 
-<h3 align="middle">Part 2: Antialiasing triangles </h3>
-<p> For task 2, we built out our implementation of rasterizing basic triangles to include super-sampling. </p>
-  
+<h3 align="middle">Part 2: Antialiasing triangles </h3>  
+<p> To supersample, we resize sample buffer to be a 1D array that increases to the length of sample rate * 
+  framebuffer size. While iterating through each pixel we recreate a high definition image through the sample 
+  buffer by splitting the pixel by the number of supersamples we want and checking if the center of each 
+  smaller section is in the triangle and updating it into the larger supersample array. After all the triangles 
+  have been iterated through and the sample buffer is fully updated, in resolve_to_framebuffer, we iterate 
+  through groupings of the sample buffer that correspond to a specific pixel and take the average of those colors. </p>
+<p> Supersampling helps reduce aliasing and jaggies since taking the average of multiple samples in the pixel 
+  helps create a blurred effect. </p>
+<p> We altered the rasterization pipeline by rasterizing and fragment processing the entire image before going 
+  to the framebuffer operations so we can average the colors of the entire high resolution image. If there is 
+  a triangle that crosses multiple pixels, we can average those colors to blur the line. </p>
+<p> We utilize supersampling to reduce the jaggies throughout the picture, especially with skinnier corners 
+  of shapes and triangles. By creating a blurred effect with the supersampling, we are able to reduce 
+  aliasing in the images. </p>
+
+
+
+
   <div align="middle">
   <table style="width=100%">
     <tr>
