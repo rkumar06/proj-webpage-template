@@ -32,13 +32,15 @@
 <div>
 
 <h2 align="middle">Overview</h2>
-<p>Upon completion of this project, we have build a functional 
-<p>Give a high-level overview of what you implemented in this project. Think about what you've built as a whole. Share your thoughts on what interesting things you've learned from completing the project.</p>
+<p>Upon completion of this project, we have built a functional vector graphics renderer that can render simple svg files! Though difficult, this project was rewarding once we could see the images. </p>
+<p>One interesting this we learned is that floating point errors can have intense graphic representations in images. We found it fascinating that implementing barycentric coordinates helped with smooth images. </p>  
+  <p>Using mipmaps to show blurs with depth perception was also interesting. </p> 
+
 
 <h2 align="middle">Section I: Rasterization</h2>
 
 <h3 align="middle">Part 1: Rasterizing single-color triangles</h3>
-<p> For task 1, we implemented basic triangle rasterization. Three points of a triangle are passed into the function. Our algorithm finds the maximum and minnimum of the x-values and y-values given. 
+<p> For task 1, we implemented basic triangle rasterization. Three points of a triangle are passed into the function. Our algorithm finds the maximum and minimum of the x-values and y-values given. 
   The rest of the rasterization is implemented in task 2. Our algorithm is no worse than one that checks each sample within the bounding box of the triangle because we are also just finding the bounds.
   It is no more or less efficient. You will see from the pixel inspector that the edges and corners of this images are pixelated rather than blurred. We later implement a fix for this problem.</p>
 
