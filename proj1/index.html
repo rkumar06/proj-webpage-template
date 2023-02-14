@@ -141,6 +141,32 @@
     We interpolate from these four texels to get the average texel color and map it to our pixel in (x,y).</p>
   <p> We see the biggest difference between the sampling methods when working with images with only a few colors. Nearest neighbor can improperly represent pixels because it only takes one sample. Nearest
     neighbor is better for sampling when you want a crisper image especially with groups of the same color. Bilinear is better for accurately representing an image, even if it does produce a blurrier image. </p>
+  
+  <div align="middle">
+  <table style="width=100%">
+    <tr>
+      <td>
+        <img src="nearest1.png" align="middle" width="400px"/>
+        <figcaption align="middle">Nearest, sample rate: 1</figcaption>
+      </td>
+      <td>
+        <img src="nearest16.png" align="middle" width="400px"/>
+        <figcaption align="middle">Nearest, sample rate: 16</figcaption>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        <img src="bilinear1.png" align="middle" width="400px"/>
+        <figcaption align="middle">Bilinear, sample rate: 1</figcaption>
+      </td>
+      <td>
+        <img src="bilinear16.png" align="middle" width="400px"/>
+        <figcaption align="middle">Bilinear, sample rate: 16</figcaption>
+      </td>
+    </tr>
+  </table>
+</div>
 
 
 <h3 align="middle">Part 6: "Level sampling" with mipmaps for texture mapping</h3>
