@@ -89,6 +89,19 @@
 
 
 <h3 align="middle">Part 6: "Level sampling" with mipmaps for texture mapping</h3>
+<p>Level sampling determines how close or far away the part of the image is to determine how high resolution the image needs to be. 
+  This is utilized through mipmap levels: higher mipmap levels (0-7) mean lower resolution the pixel will be more of an average of the surroudning pixels
+  and lower pixels will be higher resolution. Level 0 is the highest resolution for the image.</p>
+<p>To implement this, we have to determine which mipmap level it is on by converting the pixel coordinates (x, y) to their texture coordinate coordinates (u,v).
+  We calculated (x, y), (x+1, y), and (x, y+1) for all pixels that have these points to find the partial derivatives of x and y. By taking the log base 2 of the max 
+  of the norms of the vectors created by the translated points of (x, y) and (x+1, y) and points (x, y) and (x, y+1), we find our level. We can choose 2 different
+  level determining methods of nearest level to the calculated value or through linear interpolation that takes the 2 colors of sampling at the level above and below
+  and getting the weighted average based on their distance from that level. </p>
+  <p>By speed and memory, single pixel sampling is more efficient than supersampling since it doesn't have to get the high resolution image and downsample with a larger memory
+    sample buffer. However, by supersampling, jaggies are less obvious and there is less antialiasing. For pixel sampling, using the nearest method is better with speed and memory
+    since it only needs to utilize one texture into account; however, bilinear interpolation improves the quality of the picture by sampling and averaging the values around the point.
+    With level sampling, level 0 at default is fastest with the least amount of memory used, but provides and aliased picture. Level nearest samples improves the image with antialiasing, 
+    but it takes more time and memory than level 0 sampling. Finally, linear level interpolation reduces antialiasing the most, but it utilizes the most memory and speed.</p>
 
 
 
