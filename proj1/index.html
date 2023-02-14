@@ -183,6 +183,44 @@
     since it only needs to utilize one texture into account; however, bilinear interpolation improves the quality of the picture by sampling and averaging the values around the point.
     With level sampling, level 0 at default is fastest with the least amount of memory used, but provides and aliased picture. Level nearest samples improves the image with antialiasing, 
     but it takes more time and memory than level 0 sampling. Finally, linear level interpolation reduces antialiasing the most, but it utilizes the most memory and speed.</p>
+  
+  <div align="middle">
+  <table style="width=100%">
+    <tr>
+      <td>
+        <img src="level0_pixelbilinear.png" align="middle" width="400px"/>
+        <figcaption align="middle">Nearest, sample rate: 1</figcaption>
+      </td>
+      <td>
+        <img src="level0_pixelnear.png" align="middle" width="400px"/>
+        <figcaption align="middle">Nearest, sample rate: 16</figcaption>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        <img src="levelline_pixelnear.png" align="middle" width="400px"/>
+        <figcaption align="middle">Bilinear, sample rate: 1</figcaption>
+      </td>
+      <td>
+        <img src="levelling_pixelbilinear.png" align="middle" width="400px"/>
+        <figcaption align="middle">Bilinear, sample rate: 16</figcaption>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        <img src="levelnear_pixelbilinear.png" align="middle" width="400px"/>
+        <figcaption align="middle">Bilinear, sample rate: 1</figcaption>
+      </td>
+      <td>
+        <img src="levelnear_pixelnear.png" align="middle" width="400px"/>
+        <figcaption align="middle">Bilinear, sample rate: 16</figcaption>
+      </td>
+    </tr>
+    
+  </table>
+</div>
 
 
 
