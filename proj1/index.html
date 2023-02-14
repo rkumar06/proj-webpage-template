@@ -54,21 +54,6 @@
         <img src="task1image.png" align="middle" width="400px"/>
         <figcaption align="middle">Caption goes here.</figcaption>
       </td>
-      <td>
-        <img src="proj-webpage-template/proj1/task1image" align="middle" width="400px"/>
-        <figcaption align="middle">Caption goes here.</figcaption>
-      </td>
-    </tr>
-    <br>
-    <tr>
-      <td>
-        <img src="images/image3.png" align="middle" width="400px"/>
-        <figcaption align="middle">Caption goes here.</figcaption>
-      </td>
-      <td>
-        <img src="images/image4.png" align="middle" width="400px"/>
-        <figcaption align="middle">Caption goes here.</figcaption>
-      </td>
     </tr>
   </table>
 </div>
@@ -144,18 +129,29 @@
   <p> Barycentric coordinates translate points in the (x,y) coordinate system to the (alpha, beta, gamma) coordinate system. Using the 
     (alpha, beta, gamma) barycentric coordinate system, we can use the colors of the vertices of a triangle to find the weighted average and assign the
     the color of some pixel within the triangle. </p>
+  
+  <div align="middle">
+  <table style="width=100%">
+    <tr>
+      <td>
+        <img src="task4.png" align="middle" width="400px"/>
+        <figcaption align="middle"> test 7 </figcaption>
+      </td>
+    </tr>
+  </table>
+</div>
 
 
 <h3 align="middle">Part 5: "Pixel sampling" for texture mapping</h3>
   
   <p> Pixel sampling allows us to map textures to our images. The process entails recieving a triangle that was passed in,
     evaluating what texture should be at that sample, and applying the texture to the specific pixels as a color </p>
-  <p>We find the barycentric coordinates because the image is in (x,y) coordinates and we need to transform to the texutres (u,v) coordinates.
+  <p>We find the barycentric coordinates because the image is in (x,y) coordinates and we need to transform to the textures (u,v) coordinates.
     By interpolating with the barycentric coordinates and the triangles original coordinates, we can get our desired position in (u,v) coordinates. 
     From here, we can assign the texture using either the sample_nearest or sample_bilinear algorithm. 
   <p> For nearest sampling, we first check to make sure the level is valid, returning magenta if not. Then we set the pixel's color in (x,y) coordinates, to the closest corresponding texel in (u,v) coordinates.</p>
   <p> For bilinear sampling, we first check to make sure the level is valid, returning the color magenta to indicate error if not. 
-    From the point passed in, we then find the four nearest sample locations. These are the center points of the four texels closest to the point in (u,v) coordinates.
+    From the point passed in, we then find the four nearest sample locations. These are the center points of the four texels closest to the point in (u,v) coordinates by taking the floor and ceiling values and creating a point based on them.
     We interpolate from these four texels to get the average texel color and map it to our pixel in (x,y).</p>
   <p> We see the biggest difference between the sampling methods when working with images with only a few colors. Nearest neighbor can improperly represent pixels because it only takes one sample. Nearest
     neighbor is better for sampling when you want a crisper image especially with groups of the same color. Bilinear is better for accurately representing an image, even if it does produce a blurrier image. </p>
