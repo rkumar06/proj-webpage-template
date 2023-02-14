@@ -41,7 +41,7 @@
 
 <h3 align="middle">Part 1: Rasterizing single-color triangles</h3>
 <p> For task 1, we implemented basic triangle rasterization. Three points of a triangle are passed into the function. Our algorithm finds the maximum and minimum of the x-values and y-values given. 
-  The rest of the rasterization is implemented in task 2. Our algorithm is no worse than one that checks each sample within the bounding box of the triangle because we are also just finding the bounds.
+  We iterate through all the pixels in the bounded xy region and check if it is inside the triangle. We created a point inside function that uses vectors and the three line test. The rest of the rasterization is implemented in task 2. Our algorithm is no worse than one that checks each sample within the bounding box of the triangle because we are also just finding the bounds.
   It is no more or less efficient. You will see from the pixel inspector that the edges and corners of this images are pixelated rather than blurred. We later implement a fix for this problem.</p>
 
 <div align="middle">
