@@ -37,7 +37,9 @@
 <h2 align="middle">Section I: Rasterization</h2>
 
 <h3 align="middle">Part 1: Rasterizing single-color triangles</h3>
-<p> For task 1, we implemented basic triangle rasterization. Three points of a triangle are passed into the function. Our algorithm finds the maximum and minnimum of the x-values and y-values given. The rest of the rasterization is implemented in task 2.</p>
+<p> For task 1, we implemented basic triangle rasterization. Three points of a triangle are passed into the function. Our algorithm finds the maximum and minnimum of the x-values and y-values given. 
+  The rest of the rasterization is implemented in task 2. Our algorithm is no worse than one that checks each sample within the bounding box of the triangle because we are also just finding the bounds.
+  It is no more or less efficient. You will see from the pixel inspector that the edges and corners of this images are pixelated rather than blurred. We later implement a fix for this problem.</p>
 
 
 <p>Here is an example 2x2 gridlike structure using an HTML table. Each <b>tr</b> is a row and each <b>td</b> is a column in that row. You might find this useful for framing and showing your result images in an organized fashion.</p>
@@ -70,10 +72,7 @@
 
 
 <h3 align="middle">Part 2: Antialiasing triangles </h3>
-<p> For task 2, we built out our implementation of rasterizing basic triangles to include super-sampling. 
-  Three points of a triangle are passed into the function. Our algorithm finds the maximum and minnimum of the x-values and y-values given. 
-  The rest of the rasterization is implemented in task 2. Our algorithm is no worse than one that checks each sample within the bounding box of the triangle because we are also just finding the bounds.
-  It is no more or less efficient. You will see from the pixel inspector that the edges and corners of this images are pixelated rather than blurred. We later implement a fix for this problem. </p>
+<p> For task 2, we built out our implementation of rasterizing basic triangles to include super-sampling. </p>
 
 
 
