@@ -86,6 +86,18 @@
 
 
 <h3 align="middle">Part 5: "Pixel sampling" for texture mapping</h3>
+  
+  <p> Pixel sampling allows us to map textures to our images. The process entails recieving a triangle that was passed in,
+    evaluating what texture should be at that sample, and applying the texture to the specific pixels as a color </p>
+  <p>We find the barycentric coordinates because the image is in (x,y) coordinates and we need to transform to the texutres (u,v) coordinates.
+    By interpolating with the barycentric coordinates and the triangles original coordinates, we can get our desired position in (u,v) coordinates. 
+    From here, we can assign the texture using either the sample_nearest or sample_bilinear algorithm. 
+  <p> For nearest sampling, we first check to make sure the level is valid, returning magenta if not. Then we set the pixel's color in (x,y) coordinates, to the closest corresponding texel in (u,v) coordinates.</p>
+  <p> For bilinear sampling, we first check to make sure the level is valid, returning the color magenta to indicate error if not. 
+    From the point passed in, we then find the four nearest sample locations. These are the center points of the four texels closest to the point in (u,v) coordinates.
+    We interpolate from these four texels to get the average texel color and map it to our pixel in (x,y).</p>
+  <p> We see the biggest difference between the sampling methods when working with images with only a few colors. Nearest neighbor can improperly represent pixels because it only takes one sample. Nearest
+    neighbor is better for sampling when you want a crisper image especially with groups of the same color. Bilinear is better for accurately representing an image, even if it does produce a blurrier image. </p>
 
 
 <h3 align="middle">Part 6: "Level sampling" with mipmaps for texture mapping</h3>
@@ -97,7 +109,7 @@
   of the norms of the vectors created by the translated points of (x, y) and (x+1, y) and points (x, y) and (x, y+1), we find our level. We can choose 2 different
   level determining methods of nearest level to the calculated value or through linear interpolation that takes the 2 colors of sampling at the level above and below
   and getting the weighted average based on their distance from that level. </p>
-  <p>By speed and memory, single pixel sampling is more efficient than supersampling since it doesn't have to get the high resolution image and downsample with a larger memory
+<p>By speed and memory, single pixel sampling is more efficient than supersampling since it doesn't have to get the high resolution image and downsample with a larger memory
     sample buffer. However, by supersampling, jaggies are less obvious and there is less antialiasing. For pixel sampling, using the nearest method is better with speed and memory
     since it only needs to utilize one texture into account; however, bilinear interpolation improves the quality of the picture by sampling and averaging the values around the point.
     With level sampling, level 0 at default is fastest with the least amount of memory used, but provides and aliased picture. Level nearest samples improves the image with antialiasing, 
