@@ -122,7 +122,25 @@
 <h2 align="middle">Section II: Triangle Meshes and Half-Edge Data Structure</h2>
 
 <h3 align="middle">Part 3: Area-Weighted Vertex Normals</h3> 
+	Briefly explain how you implemented the area-weighted vertex normals.
+<p> To get the area-weighted vertex normals, we iterated through the halfedges and found all the points in the corresponding triangle. By crossing the 
+	half-edge vector and the next vector we find the normal that is added to the weighted normal. However, since the length of the vector creates
+	problems, we must take the unit vector of it so produce the smooth image.</p>
 
+<div align="middle">
+  <table style="width=100%">
+    <tr>
+      <td>
+        <img src="flat_mesh.png" align="middle" width="400px"/>
+        <figcaption align="middle">Default Flat Shading without Normals</figcaption>
+      </td>
+      <td>
+        <img src="smooth_mesh.png" align="middle" width="400px"/>
+        <figcaption align="middle">Phong Shading with Normals</figcaption>
+      </td>
+    </tr>
+  </table>
+</div>
 
 <h3 align="middle">Part 4: Edge Flip</h3>
 
