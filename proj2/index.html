@@ -1,7 +1,124 @@
-<html>
-	<head>
-	</head>
-	<body>
-		Project 2 here
-	</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>
+  body {
+    padding: 100px;
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color: #121212;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+</style>
+<title>CS 184 MeshEdit</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+</head>
+
+
+<body>
+
+<h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2023</h1>
+<h1 align="middle">Project 2: MeshEdit</h1>
+<h2 align="middle">Riya Kumar and Mylinh Vu, CS184-rm</h2>
+
+<br><br>
+
+<div>
+
+<h2 align="middle">Overview</h2>
+
+
+<h2 align="middle">Section I: Bezier Curves and Surfaces</h2>
+
+<h3 align="middle">Part 1: Bezier Curved with 1D de Casteljau Subdivision</h3>
+<p> Casteljau's algorithm takes the weighted average between 2 points in the base and repeatedly takes these averages until a single point is found. 
+	This algorithm builds a curve with it's interpolated points which we call the Bezier curve. 
+<p> For this task, we iterated through all adjacent points in the vector and took the weighted average of them. We did this by taking the difference 
+	of the x and y values and weighted it by mutiplying by the t value. With each adjacent pair we added a point to a new vector. The returning 
+	vector contains one less point than the starting vector which allows the process to be repeated until finding a point that lands on the Bezier curve. </p>
+
+<div align="middle">
+  <table style="width=100%">
+    
+    <tr>
+      <td>
+        <img src="level0_pixelnear_own.png" align="middle" width="400px"/>
+        <figcaption align="middle">level 0 pixel near</figcaption>
+      </td>
+      <td>
+        <img src="level0_pixelbilinear_own.png" align="middle" width="400px"/>
+        <figcaption align="middle">level 0 pixel bilinear</figcaption>
+      </td>
+      <td>
+        <img src="level0_pixelbilinear_own.png" align="middle" width="400px"/>
+        <figcaption align="middle">level 0 pixel bilinear</figcaption>
+      </td>
+    </tr>
+    <br>
+    <tr>
+       <td>
+        <img src="levelnear_pixelnear_own.png" align="middle" width="400px"/>
+        <figcaption align="middle">level near pixel near</figcaption>
+      </td>
+      <td>
+        <img src="levelnear_pixelbilinear_own.png" align="middle" width="400px"/>
+        <figcaption align="middle">level near pixel bilinear</figcaption>
+      </td>
+      <td>
+        <img src="level0_pixelbilinear_own.png" align="middle" width="400px"/>
+        <figcaption align="middle">level 0 pixel bilinear</figcaption>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        <img src="levelline_pixelbilinear_own.png" align="middle" width="400px"/>
+        <figcaption align="middle">level linear pixel bilinear</figcaption>
+      </td>
+      <td>
+        <img src="levelline_pixelnear_own.png" align="middle" width="400px"/>
+        <figcaption align="middle">level linear pixel near</figcaption>
+      </td>
+      <td>
+        <img src="level0_pixelbilinear_own.png" align="middle" width="400px"/>
+        <figcaption align="middle">level 0 pixel bilinear</figcaption>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<h3 align="middle">Part 2: Bezier Surfaces with Separable 1D de Casteljau </h3>  
+
+	
+
+<h2 align="middle">Section II: Triangle Meshes and Half-Edge Data Structure</h2>
+
+<h3 align="middle">Part 3: Area-Weighted Vertex Normals</h3> 
+
+
+<h3 align="middle">Part 4: Edge Flip</h3>
+
+
+<h3 align="middle">Part 5: Edge Splits</h3>
+	
+<h3 align="middle">Part 6: Loop Subdivision for Mesh Upsampling</h3>
+
+  
+  <p> link to website </p>
+  <p> https://rkumar06.github.io/proj-webpage-template/ </p>
+
+
+
+<h2 align="middle">Section III: Optional, Possible Extra Credit</h2>
+
+<h3 align="middle">Part 7: Design and Edit Your Own Mesh! (Optional, Possible Extra Credit)</h3>
+
+</body>
 </html>
