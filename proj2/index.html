@@ -101,7 +101,6 @@
 
 
 <h3 align="middle">Part 2: Bezier Surfaces with Separable 1D de Casteljau </h3>  
-<p> Briefly explain how de Casteljau algorithm extends to Bezier surfaces and how you implemented it in order to evaluate Bezier surfaces. </p>
 <p> With Bezier surfaces, it becomes a 3D process by taking weighted averages of 3D points and finding the Bezier curves in 2 dimensions. With the 2
 	dimensional curves, you can use it to trace the surface. To implement this, similar to task 1, we use de Casteljau's algorithm to find the interpolated
 	point, but using 3D dimensions so applying the same math to the z direction. However, we had 2 difference weighted values of u and v and found a set of
