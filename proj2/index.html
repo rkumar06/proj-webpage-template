@@ -141,8 +141,15 @@
     </tr>
   </table>
 </div>
+	
+	Briefly explain how you implemented the edge flip operation and describe any interesting implementation / debugging tricks you have used.
+Show screenshots of a mesh before and after some edge flips.
+Write about your eventful debugging journey, if you have experienced one.
 
 <h3 align="middle">Part 4: Edge Flip</h3>
+	<p> We implemented the edge flip operation by first finding the halfedge associated with the edge iterator passed in, or the one the user clicks.
+		Then we find the associated halfedges, edges, and vertices from the current triangle and the next triangle we are flipping the edge with by iterating around the triangles halfedges, edges, and twin edges.
+		We then reset the neighbors, physically redrawing edges with their correct neighbors. Lastly, we reassign the 
 
 
 <h3 align="middle">Part 5: Edge Splits</h3>
