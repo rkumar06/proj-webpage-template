@@ -171,6 +171,12 @@
 
 
 <h3 align="middle">Part 5: Edge Splits</h3>
+	<p> We implemented edge split with similar concepts to edge flip. First we check if the given edge is a boundary, if it's not we continue. We then find the halfedges of the two triangles
+		involved, inner and outer. We also find the two faces of the traingles. We also find the vertices of the two involved triangles. We only need to find four because two are shared between the two triangles. 
+		Next, we create a new vertex iterator for the new point, this is what we will eventually return. We find the position by adding the position of two points on opposite ends and dividing by two to find the center. We then create new edges and new half
+		edges for all the new components that come from adding a vertex. These are new pointers to keep track of, differentiating the task from task 4. We then set the neighbors of all the half edges to reflect
+		their relationship to the new point. This is the part that took some debugging. I drew a diagram and mapped out all the new relationships. We then update all the halfedges assigned to edges, vertexes, and faces to
+		reflect the new triangles. Lastly, we return the vertex iterator for the new point that we created earlier. 
 	
 <h3 align="middle">Part 6: Loop Subdivision for Mesh Upsampling</h3>
 
