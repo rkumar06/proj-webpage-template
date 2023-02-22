@@ -177,6 +177,29 @@
 		edges for all the new components that come from adding a vertex. These are new pointers to keep track of, differentiating the task from task 4. We then set the neighbors of all the half edges to reflect
 		their relationship to the new point. This is the part that took some debugging. I drew a diagram and mapped out all the new relationships. We then update all the halfedges assigned to edges, vertexes, and faces to
 		reflect the new triangles. Lastly, we return the vertex iterator for the new point that we created earlier. 
+		
+<div align="middle">
+  <table style="width=100%">
+    <tr>
+      <td>
+        <img src="task5_original.png" align="middle" width="400px"/>
+        <figcaption align="middle">Teapot before any edge splits</figcaption>
+      </td>
+      <td>
+        <img src="task5_one_split.png" align="middle" width="400px"/>
+        <figcaption align="middle">Teapot with one edge split</figcaption>
+      </td>
+      <td>
+        <img src="task5_multiple_splits.png" align="middle" width="400px"/>
+        <figcaption align="middle">Teapot with multiple edge splits</figcaption>
+      </td>
+      <td>
+        <img src="task5_splits_and_flips" align="middle" width="400px"/>
+        <figcaption align="middle">Teapot with edge splits and edge flips</figcaption>
+      </td>
+    </tr>
+  </table>
+</div>
 	
 <h3 align="middle">Part 6: Loop Subdivision for Mesh Upsampling</h3>
 
