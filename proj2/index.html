@@ -205,7 +205,25 @@
 	It was producing weird results and I thought it was with my setNeighbors. So, I spent more time with diagrams. Then looking through it with fresh eyes, I caught it. </p>
 	
 <h3 align="middle">Part 6: Loop Subdivision for Mesh Upsampling</h3>
-
+<p>For loop subdivision, we first iterate through all the edges in the original mesh. With each edge we find all 4 vertices that correspond to the 2 triangles that are connected
+	to the edge we are working with. Then we take the weighted average with the vertices connected to the edge having a weight of 3/8 and the outer vertices have a weight of 1/8.
+	The weighted average gets set to the edge's new position since it will be helpful when finding the locations for the subdivision. We also want to flag the edge as not new 
+	to ensure we don't iterate over it multiple times for later loops.</p>
+<p>Afterwards, we iterate through all the vertices and find the original_neighbor_position_sum by going through the vertices that are neighboring it. We also want to find n which is 
+	the vertex degree and the u value which is based on the degree: 3/16 if n = 3, otherwise 3/(8n). We set the new position of the vertex we are on to an average of 
+	(1 - n * u) for the original point's position and u * the original_neightbor_position_sum we found earlier. Again, we want to flag each vertex as not new since we are in the 
+	original mesh; this will help with determining to split or flip edge later on.</p>
+<p>After flagging all our original edges and vertices, we can start splitting the original edges by checking to ensure it's 2 vertices are not new. When we split an edge, we store the 
+	vertex that gets returned from the split function. We want to set it's new position to the edge's new position from before the split since it was saving the value of where the 
+	vertex should end up, utilizing the weighted average. We also want to flag it as new since we are creating new edges and want to make sure we only split the ones from the 
+	original mesh.</p>
+<p>Next, we iterate through all the edges in the mesh and we want to flip any new edges if it connects a new and old vertex. Finally, we iterate through all the vertices and set their 
+	positions to the value that was being held in the new position variable since we want to update them. We also want to flag each vertex as not new anymore for the next 
+	subdivision that they are now part of the "original mesh".</p>
+<p>Some debugging techniques we used was using print statements between the loops to figure out which loop is causing it to go into an infinite loop. We also walked through smaller 
+	meshes that we drew and walking through the code to see what exactly was going on and seeing what we were missing.</p>
+<p>Sharp edges and corners get rounded out when going through subdivision. For example, the cube when subdivided looks more like a oddly shaped sphere. If we pre-split the edges, we 
+	can retain more of the sharpness of the corners since we can manipulate it more into looking exactly what we want and having sharper details closer to those edges.</p>
   
   <p> link to website </p>
   <p> https://rkumar06.github.io/proj-webpage-template/ </p>
