@@ -221,9 +221,68 @@
 	positions to the value that was being held in the new position variable since we want to update them. We also want to flag each vertex as not new anymore for the next 
 	subdivision that they are now part of the "original mesh".</p>
 <p>Some debugging techniques we used was using print statements between the loops to figure out which loop is causing it to go into an infinite loop. We also walked through smaller 
-	meshes that we drew and walking through the code to see what exactly was going on and seeing what we were missing.</p>
+	meshes that we drew and walking through the code to see what exactly was going on and seeing what we were missing. When we looked through our code originally, we had divots 
+	that were causing problems and we got help decifering which method was the issue based on which functions worked with a functioning MeshEditor. We found out that it came from 
+	our FlipEdge function and had to edit it to fix some of the edges not flipping correctly. This made our methods functional. </p>
 <p>Sharp edges and corners get rounded out when going through subdivision. For example, the cube when subdivided looks more like a oddly shaped sphere. If we pre-split the edges, we 
-	can retain more of the sharpness of the corners since we can manipulate it more into looking exactly what we want and having sharper details closer to those edges.</p>
+	can retain more of the sharpness of the corners since we can manipulate it more into looking exactly what we want and with more symmetrical features.</p>
+	
+
+<div align="middle">
+  <table style="width=100%">
+    
+    <tr>
+      <td>
+        <img src="cube1.png" align="middle" width="400px"/>
+        <figcaption align="middle">Original Cube Mesh</figcaption>
+      </td>
+      <td>
+        <img src="cube2.png" align="middle" width="400px"/>
+        <figcaption align="middle">After 1 Upsample</figcaption>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        <img src="cube3.png" align="middle" width="400px"/>
+        <figcaption align="middle">After 2 Upsamples</figcaption>
+      </td>
+       <td>
+        <img src="cube4.png" align="middle" width="400px"/>
+        <figcaption align="middle">After 3 Upsamples</figcaption>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        <img src="cube5.png" align="middle" width="400px"/>
+        <figcaption align="middle">After 4 Upsamples</figcaption>
+      </td>
+      <td>
+        <img src="cube6.png" align="middle" width="400px"/>
+        <figcaption align="middle">After 5 Upsamples</figcaption>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        <img src="cube_pre1.png" align="middle" width="400px"/>
+        <figcaption align="middle">After 2 Upsamples with Pre-Processing some Edges</figcaption>
+      </td>
+      <td>
+        <img src="cube_pre2.png" align="middle" width="400px"/>
+        <figcaption align="middle">After 3 Upsamples with Pre-Processing</figcaption>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        <img src="cube_pre3.png" align="middle" width="400px"/>
+        <figcaption align="middle">After 4 Upsamples with Pre-Processing</figcaption>
+      </td>
+  </tr>
+  </table>
+</div>
   
   <p> link to website </p>
   <p> https://rkumar06.github.io/proj-webpage-template/ </p>
