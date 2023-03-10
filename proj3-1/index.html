@@ -33,8 +33,16 @@
 
 
 		<h2 align="middle">Part I: Ray Generation and Scene Intersection</h2>
-			
-			<p></p>
+			Walk through the ray generation and primitive intersection parts of the rendering pipeline
+			<p>To generate a camera ray, normalized coordinates need to be transformed into camera space. 
+				From there, we can generate a ray in camera space that will be converted into a ray in world space. 
+				With the ray, then we can determine what rays intersect either the pixel or shape. In this task, 
+				we implemented triangle and sphere intersection.</p>
+			<p>For triangle intersection, we utilized the Moller-Trumbore intersection algorithm. This algorithm 
+				takes in the equations of the ray and the triangle and set them equal to each other. From there, 
+				we calculated edges (e1 and e2) and spaces (s, s1, s2). With these values, we can find the arbitrary 
+				values of t, b1, and b2 which will determine if the ray intersects the triangle. If b1 and b2 are 
+				between 0 and 1 and 1 is within the range of the ray, then the ray intersected the triangle. </p>
 
 		<div align="middle">
 			<table style="width=100%">
@@ -61,7 +69,7 @@
 			</tr>
 			<tr>
 				<td>
-					<img src="CBgems.png" align="middle" width="400px"/>
+					<img src="banana.png" align="middle" width="400px"/>
 					<figcaption align="middle">More Scene Rendering</figcaption>
 				</td>
 				<td>
