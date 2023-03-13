@@ -205,5 +205,36 @@
 				the same function, at_least_one_bounce_radiance, but decrease the depth value in order to track the bounces that the ray has already taken. We then solve the the irrradiance 
 				from the indirect light wth the same formula by multiplying the value by BSDF, the cosing of the hit_p normal and ray. However, this time we divide by both the pdf and 
 				continuation probability (cpdf). This irradiance gets factored into the global illumination and averaged out to produce the illuminated image. </p>
+		
+		
+		<h2 align="middle">Part 5: Adaptive Sampling</h2>
+			<p>For adaptive sampling, </p>
+			
+			<div align="middle">
+				<table style="width=100%">
+				<tr>
+					<td>
+						<img src="part5_bunny1.png" align="middle" width="400px"/>
+						<figcaption align="middle">Image of Bunny</figcaption>
+					</td>
+					<td>
+						<img src="part5_bunny2.png" align="middle" width="400px"/>
+						<figcaption align="middle">4 Light Rays with 1 Sample</figcaption>
+					</td>
+				</tr>
+				<br>
+				<tr>
+					<td>
+						<img src="part5_dragon1.png" align="middle" width="400px"/>
+						<figcaption align="middle">16 Light Rays with 1 Sample</figcaption>
+					</td>
+					<td>
+						<img src="part5_dragon2.png" align="middle" width="400px"/>
+						<figcaption align="middle">64 Light Rays with 1 Sample</figcaption>
+					</td>
+				</tr>	
+				</table>
+			</div>
+			
 	</body>
 </html>
