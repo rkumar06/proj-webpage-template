@@ -135,5 +135,23 @@
 				Generating the cow.dae file with BVH takes 0.1703 seconds to render. However, generating the image without BVH takes 50.4463 seconds. Generating the beetle.dae file with BVH takes 0.1136 seconds to render, but without
 				 BVH it takes 73.3020 seconds. For both moderately complex scenes, it takes significantly longer to render images without BVH than with BVH. 
 			</p>
+		<h2 align="middle">Part 3: Direct Illumination</h2>
+			<p>In direct uniform hemisphere sampling, we use the hemisphere sampling to determine which direction to sample from for hit_p. 
+				To do so, we iterate through the number of samples and average the irradiances between each ray that we find. 
+				To solve for the irradiance, we check if the ray intersects an object. If it does, then we multiply its emission, BSDF, and the cosine of 
+				the angle between hit_p normal and the ray. Afterwards, we divide by the pdf which in this case is 1/(2*PI). The average of the irradiances 
+				produces an illuminated image at each hit_p.</p>
+			<p>In direct importance sampling, we iterate through all the light rays in the scene which increases the samples we utilize. We first determine 
+				if the light is a delta light, meaning that it comes from the light source. If it is a delta light, then we only sample it once. 
+				Otherwise, we sample it by the number of samples that the input provides. With each sample we determine the irradiance in a similar 
+				method to the hemisphere sampling method by multiplying the light radiance by the BDSF and the angle between the hit_p normal and ray. Then, 
+				we divide it by its respective pdf. When we iterate through the number of samples, we also average the irradiances to get the illumniation value for 
+				the specific hit_p. </p>
+			<p>The images for the light sampling differ as the one rendered from the uniform hemisphere sampling produces more noise in comparison to the importance 
+				light sampling which appears smoother. The uniform hemisphere sampling produces more noise since the samples are only taken from the hemisphere area 
+				that is centered around our object or point of interest. Because we are taking less samples and centered a specific point, there are more chances for 
+				rays to have zero irradiance which causes the pixelated noise. In comparison, the importance light sampling is taking samples from all the rays in the 
+				scene, including the light source which decreases the noise. With more samples taken in comparison, it reduces the chances for noise as well. The tradeoff 
+				with the better produced image in the time it takes to render. </p>
 	</body>
 </html>
