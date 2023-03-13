@@ -146,12 +146,54 @@
 				Otherwise, we sample it by the number of samples that the input provides. With each sample we determine the irradiance in a similar 
 				method to the hemisphere sampling method by multiplying the light radiance by the BDSF and the angle between the hit_p normal and ray. Then, 
 				we divide it by its respective pdf. When we iterate through the number of samples, we also average the irradiances to get the illumniation value for 
-				the specific hit_p. </p>
+				the specific hit_p. With more light ray samples, the less noise that is depicted in the image since we can average the illumination better with more samples taken. </p>
+			
+			<div align="middle">
+				<table style="width=100%">
+				<tr>
+					<td>
+						<img src="bunny_1_1.png" align="middle" width="400px"/>
+						<figcaption align="middle">1 Light Ray with 1 Sample</figcaption>
+					</td>
+					<td>
+						<img src="bunny_4_1.png" align="middle" width="400px"/>
+						<figcaption align="middle">4 Light Rays with 1 Sample</figcaption>
+					</td>
+				</tr>
+				<br>
+				<tr>
+					<td>
+						<img src="bunny_16_1.png" align="middle" width="400px"/>
+						<figcaption align="middle">16 Light Rays with 1 Sample</figcaption>
+					</td>
+					<td>
+						<img src="bunny_64_1.png" align="middle" width="400px"/>
+						<figcaption align="middle">64 Light Rays with 1 Sample</figcaption>
+					</td>
+				</tr>	
+				</table>
+			</div>
+				
 			<p>The images for the light sampling differ as the one rendered from the uniform hemisphere sampling produces more noise in comparison to the importance 
 				light sampling which appears smoother. The uniform hemisphere sampling produces more noise since the samples are only taken from the hemisphere area 
 				that is centered around our object or point of interest. Because we are taking less samples and centered a specific point, there are more chances for 
 				rays to have zero irradiance which causes the pixelated noise. In comparison, the importance light sampling is taking samples from all the rays in the 
 				scene, including the light source which decreases the noise. With more samples taken in comparison, it reduces the chances for noise as well. The tradeoff 
 				with the better produced image in the time it takes to render. </p>
+			
+			<div align="middle">
+				<table style="width=100%">
+				<tr>
+					<td>
+						<img src="bunny_64_32_hem.png" align="middle" width="400px"/>
+						<figcaption align="middle">Uniform Hemisphere Sampling</figcaption>
+					</td>
+					<td>
+						<img src="bunny_64_32_light.png" align="middle" width="400px"/>
+						<figcaption align="middle">Importance Light Sampling</figcaption>
+					</td>
+				</tr>
+				</table>
+			</div>
 	</body>
 </html>
