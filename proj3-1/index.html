@@ -79,5 +79,33 @@
 			</tr>	
 			</table>
 		</div>
+			
+		<h2 align="middle">Part 2: Bounding Volume Hierarchy</h2>
+			<p> In order to construct the BVH, we find the number of primitives given to us. If there are less primitives
+				than allowed for the max leaf size, we simply create a leaf node by specifying a new start and end for
+				the node. The left and right values will be null since it is a leaf. However, if there are more primitves than
+				the allowed for a leaf node, then we have to divide the leaf nodes into a right and left side and use recursion. 
+				We find the average for all the primitives which will later use to compare against the centroids. We do this by creating
+				a 0 vector in the x, y, and z direction and looping through all the primitives. We add each primitives' bbox's centroid to
+				our average so it is representitive of all the primitives. We divide this sum by the number of primitives to get the average.
+				Our next step is to figure out what axis to split on that gives us the most benefit.
+				
+				For each axis, we start by dividing all the primitives into the category of right or left based on how their centroid compares to our average centroid value for that axis that we calculated
+				eariler. We then build each primitives bbox. We find the extent, or the difference between the max and min of each bbox. We use the extent
+				to find the left hueristic and the right hueristic. We can sum these to find the overall hueristic. Since this new hueristic is made up of
+				both the left and right sides, we can compare this against the overall smallest_surface_area_hueristic. The hueristic will be compared to the
+				hueristic for all this axis so whichever is smallest of the axis will prevail. 
+				
+				So once we know which axis it is most benneficial to split on, we prepare for recursion. We set the left primitives and right primitives
+				to those of the axis it is most benneficial to split on. We do that by iterating through all the primtiives, like in the previous step, only this
+				time we are getting the bbox's centroid on the most benneficial axis and comparing it to the average of the most beneficial axis aswell. 
+				
+				Once that's done, we just need to find the proper iterators to pass into the recursive call. For left recursive call, we can use start, but then we need
+				to create a center left iterator for the call to use as an end iterator. We do this by iterating through the  number of primitives and assigning values
+				to the left and right iterators. For the right recursive call, we can start off at the left center iterator, but then we can use the end iterator. For both calls
+				we can use the max_leaf_size that was given. After the recursion comes up with lists that are smaller than the max leaf size, we will get leaf nodes returned from the
+				bottom up. 
+				
+			</p>
 	</body>
 </html>
