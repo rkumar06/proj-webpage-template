@@ -195,5 +195,15 @@
 				</tr>
 				</table>
 			</div>
+			
+		<h2 align="middle">Part 4: Global Illumination</h2>
+			<p>Global illuminations utilized the at_least_one_bounce function to iterate through the bounces to illuminate the scene with the accumilation of direct and indirect 
+				lighting. To get the direct lighting, we call the one_bounce_radiance function as our basis of light. Then, we want to check the input depth to determine if the 
+				ray and how many bounces it has taken. It the ray hasn't taken as many bounces as the max ray depth, then we employ the Russian Roulette method which take the 
+				continuation probability of .7 and determines whether the ray should continue tracing. This allows to us to sample enough rays for the image, but still increase 
+				efficiency by still limiting the values it continues to evaluate. If the ray continues to be traced, then we take the sample from hit_p and use recursion by calling 
+				the same function, at_least_one_bounce_radiance, but decrease the depth value in order to track the bounces that the ray has already taken. We then solve the the irrradiance 
+				from the indirect light wth the same formula by multiplying the value by BSDF, the cosing of the hit_p normal and ray. However, this time we divide by both the pdf and 
+				continuation probability (cpdf). This irradiance gets factored into the global illumination and averaged out to produce the illuminated image. </p>
 	</body>
 </html>
