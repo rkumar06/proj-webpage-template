@@ -258,7 +258,14 @@
 		
 		
 		<h2 align="middle">Part 5: Adaptive Sampling</h2>
-			<p>For adaptive sampling, </p>
+			<p>For adaptive sampling, we start by setting up all the variables we will need based on the formula
+			given in class. Then, we run through each of the sample, incrementing the batch size at the end of each loop to keep an
+				accurate count. We see if a pixel has converged every samplesPerBatch pixels by comparing 
+			the batch size and samples per batch at the beginning of each sample loop. If so, we update the neccesary variables
+			for the equations such as mu and mu squared. Then, we get the adjusted origin, the ray, the max ray depth, and the estimated radiance
+			global illumination for that ray, for that sample. We also keep track of the s1 and s2 variable by saving that illumination and the
+			illumination squared. We keep track of the average my adding the illumination to the average and dividing by the number of samples.
+			We then update the sample buffer and the sample count buffer to reflect the sampling rate colors for different areas. </p>
 			
 			<div align="middle">
 				<table style="width=100%">
