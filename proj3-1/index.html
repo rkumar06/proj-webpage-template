@@ -209,6 +209,22 @@
 				from the indirect light wth the same formula by multiplying the value by BSDF, the cosing of the hit_p normal and ray. However, this time we divide by both the pdf and 
 				continuation probability (cpdf). This irradiance gets factored into the global illumination and averaged out to produce the illuminated image. </p>
 			
+		<p> The next two images depict one scene with only either direct illumination or indirect illumination. </p>
+			<div align="middle">
+			<table style="width=100%">
+			<tr>
+				<td>
+					<img src="part4_Lout.png" align="middle" width="400px"/>
+					<figcaption align="middle">Only direct illumination</figcaption>
+				</td>
+				<td>
+					<img src="part4_one_bounce.png" align="middle" width="400px"/>
+					<figcaption align="middle">only indirect illumination</figcaption>
+				</td>
+			</tr>
+		</table>
+		</div>
+			
 			<p> The following table shows one scene rendered with various sample per pixel rates with 4 light rays. </p>
 			<div align="middle">
 				<table style="width=100%">
