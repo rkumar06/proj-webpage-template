@@ -210,6 +210,8 @@
 				continuation probability (cpdf). This irradiance gets factored into the global illumination and averaged out to produce the illuminated image. </p>
 			
 		<p> The next two images depict one scene with only either direct illumination or indirect illumination. </p>
+		<p> Note: the indirect illumination image is not generated perfectly because the light rays are not bouncing. The final image is correct but at
+			lower sample rates it does not generate properly. </p>
 			<div align="middle">
 			<table style="width=100%">
 			<tr>
@@ -322,7 +324,7 @@
 			
 			<p> The following images are generated with a sample rate of 2048. The parts with more shadowing require more adaptive sampling. </p>
 			<p> Note: The images are not completely correct. Thre is more green than there should be and not enough blue. Since blue represents
-				low sample rates, that means some parts of our image has higher sample rates than it should. This is due to direct illumination not being
+				low sample rates, that means some parts of our image has higher sample rates than it should. This is due to indirect illumination not being
 				implemented perfectly. </p>
 			
 			<div align="middle">
