@@ -1,7 +1,179 @@
-<html>
-	<head>
-	</head>
-	<body>
-		Project 3-2 here
-	</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>  
+    div.padded {  
+      padding-top: 0px;  
+      padding-right: 100px;  
+      padding-bottom: 0.25in;  
+      padding-left: 100px;  
+    }  
+  </style> 
+<title>Riya Kumar and Mylinh Vu  |  CS 184</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+<br />
+<h1 align="middle">Assignment 3-2: Additional Features to PathTracer</h1>
+    <h2 align="middle">Riya Kumar and Mylinh Vu</h2>
+    <h2 align="middle">https://rkumar06.github.io/proj-webpage-template/</h2>
+
+    <div class="padded">
+
+        
+        * NOTE: For this project, you will choose TWO out of the four given parts to complete. One of those parts must be Part 1 or Part 2. In other words, you can choose any combination of two parts except the pair (Part 3, Part 4).
+
+
+        <h3 align="middle">Part 1. Mirror and Glass Materials</h3>
+
+        <div align="middle">
+		<table style="width=100%">
+			<tr>
+				<td>
+					<img src="final_spheres0.png" align="middle" width="400px"/>
+					<figcaption align="middle">Max Ray Depth: 0</figcaption>
+				</td>
+				<td>
+					<img src="final_spheres1.png" align="middle" width="400px"/>
+					<figcaption align="middle">Max Ray Depth: 1</figcaption>
+				</td>
+			</tr>
+			<br>
+			<tr>
+				<td>
+					<img src="final_spheres2.png" align="middle" width="400px"/>
+					<figcaption align="middle">Max Ray Depth: 2</figcaption>
+				</td>
+				<td>
+					<img src="final_spheres3.png" align="middle" width="400px"/>
+					<figcaption align="middle">Max Ray Depth: 3</figcaption>
+				</td>
+			</tr>
+			<br>
+			<tr>
+				<td>
+					<img src="final_spheres4.png" align="middle" width="400px"/>
+					<figcaption align="middle">Max Ray Depth: 4</figcaption>
+				</td>
+				<td>
+					<img src="final_spheres5.png" align="middle" width="400px"/>
+					<figcaption align="middle">Max Ray Depth: 5</figcaption>
+				</td>
+			</tr>	
+			<br>
+			<tr>
+				<td>
+					<img src="final_spheres100.png" align="middle" width="400px"/>
+					<figcaption align="middle">Max Ray Depth: 100</figcaption>
+				</td>
+			</tr>	
+		</table>
+	</div>
+	    
+        <p>
+            With max ray depth of 0, there is no light bouncing or hitting other objects so it renders a dark box that only illuminates the light source. 
+		With max ray depth of 1, the light lights up the room, but because of the material of the spheres, it needs another light bounce to see the 
+		reflection of the mirrored ball, and more light bounces to see the refraction in the other ball. In max ray depth of 2, we can see the reflection 
+		of the mirror ball now; however, there hasn't been enough light bounces to see the refraction in the ball. We only see the slight reflection off 
+		the top from the light bounce. When we hit the max ray depth of 3, the refraction ball fits into the scene a lot better and we can see the refraction 
+		on the ball. This image is mostly missing some minor details that come with more ray bounces. With max ray depth of 4, we can see that in the reflection 
+		ball, the ball is now blue instead of black since the extra bounce allows it to process the data of the light bounce. There is also a light light bounce 
+		on the wall that comes from the refraction ball. With max ray depth of 5, the room gets slightly brighter along with the small light reflection on the 
+		bottom right of the scene. Between may ray depth of 5 and max ray depth of 100, there is very little difference since the bounces get less noticable 
+		as it iterates through it. There are minor details that change like the small reflection on the right of the scene and the general brightness of the scene; 
+		however, all these changes are barely noticable which demonstrates how there is a limit of how many light bounces are needed for each scene since the light 
+		becomes so minimal that it's not noticeable by the human eye. 
+        </p>
+        <br>
+
+
+        <h3 align="middle">Part 2. Microfacet Material</h3>
+        <p><b>
+            Show a screenshot sequence of 4 images of scene `CBdragon_microfacet_au.dae` rendered with $\alpha$ set to 0.005, 0.05, 0.25 and 0.5. The other settings should be at least 128 samples per pixel and 1 samples per light. The number of bounces should be at least 5. Describe the differences between different images. Note that, to change the $\alpha$, just open the .dae file and search for `microfacet`.
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        <p><b>
+            Show two images of scene `CBbunny_microfacet_cu.dae` rendered using cosine hemisphere sampling (default) and your importance sampling. The sampling rate should be fixed at 64 samples per pixel and 1 samples per light. The number of bounces should be at least 5. Briefly discuss their difference.
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        <p><b>
+            Show at least one image with some other conductor material, replacing `eta` and `k`. Note that you should look up values for real data rather than modifying them arbitrarily. Tell us what kind of material your parameters correspond to. 
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        
+        
+        
+
+        <h3 align="middle">Part 3. Environment Lightl</h3>
+        <b>Pick one *.exr* file to use for all subparts here. Include a converted *.jpg* of it in your website so we know what map you are using.</b>
+        
+        <p><b>
+            In a few sentences, explain the ideas behind environment lighting (i.e. why we do it/how it works).
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        <p><b>
+            Show the *probability_debug.png* file for the *.exr* file you are using, generated using the `save_probability_debug()` helper function after initializing your probability distributions.
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        <p><b>
+            Use the `bunny_unlit.dae` scene and your environment map *.exr* file and render two pictures, one with uniform sampling and one with importance sampling. Use 4 samples per pixel and 64 samples per light in each. Compare noise levels. Make sure to include all screenshots.
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        <p><b>
+            Use a different image (if you did part 2, we recommend `bunny_microfacet_cu_unlit.dae`) and your environment map *.exr* file and render two pictures, one with uniform sampling and one with importance sampling. Use 4 samples per pixel and 64 samples per light in each. Compare noise levels. Make sure to include all screenshots.
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+
+
+
+        <h3 align="middle">Part 4. Depth of Field</h3>
+        <b>
+            For these subparts, we recommend using a microfacet BSDF scene to show off the cool out of focus effects you can get with depth of field!
+        </b>
+        <p><b>
+            In a few sentences, explain the differences between a pinhole camera model and a thin-lens camera model. 
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        <p><b>
+            Show a "focus stack" where you focus at 4 visibly different depths through a scene. Make sure to include all screenshots.
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+        <p><b>
+            Show a sequence of 4 pictures with visibly different aperture sizes, all focused at the same point in a scene. Make sure to include all screenshots.
+        </b></p>
+        <p>
+            Your response goes here.
+        </p>
+        <br>
+
+    </div>
+</body>
 </html>
