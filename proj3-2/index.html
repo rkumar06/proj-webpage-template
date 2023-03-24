@@ -98,6 +98,30 @@
         <p><b>
             Show a screenshot sequence of 4 images of scene `CBdragon_microfacet_au.dae` rendered with $\alpha$ set to 0.005, 0.05, 0.25 and 0.5. The other settings should be at least 128 samples per pixel and 1 samples per light. The number of bounces should be at least 5. Describe the differences between different images. Note that, to change the $\alpha$, just open the .dae file and search for `microfacet`.
         </b></p>
+	    
+	    <table style="width=100%">
+		<tr>
+			<td>
+				<img src="final_spheres0.png" align="middle" width="400px"/>
+				<figcaption align="middle">Max Ray Depth: 0</figcaption>
+			</td>
+			<td>
+				<img src="final_spheres1.png" align="middle" width="400px"/>
+				<figcaption align="middle">Max Ray Depth: 1</figcaption>
+			</td>
+		</tr>
+		<br>
+		<tr>
+			<td>
+				<img src="final_spheres2.png" align="middle" width="400px"/>
+				<figcaption align="middle">Max Ray Depth: 2</figcaption>
+			</td>
+			<td>
+				<img src="final_spheres3.png" align="middle" width="400px"/>
+				<figcaption align="middle">Max Ray Depth: 3</figcaption>
+			</td>
+		</tr>		
+	</table>
         <p>
             We rendered these images with a sample rate of 128, 4 samples per light, and 7 bounces. When we change the alpha value, we noticed a change in shininess. The images with a higher alpha value have less shine and a more matte appearance than the images
 		with a lower value.
