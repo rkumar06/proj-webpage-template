@@ -35,9 +35,6 @@
 				<img src="only_shearing.png" align="middle" width="400px"/>
 				<figcaption align="middle">Only Shearing Springs</figcaption>
 			</td>
-		</tr>
-		<br>
-		<tr>
 			<td>
 				<img src="all_constraints.png" align="middle" width="400px"/>
 				<figcaption align="middle">All 3 Springs: Structural, Shearing, and Bending</figcaption>
@@ -48,11 +45,87 @@
 
 	    
         <h3 align="middle">Part 2. Simulation via Numerical Integration</h3>
+	
+	<table style="width=100%">
+		<tr>
+			<td>
+				<img src="decrease_ks_2pin.png" align="middle" width="400px"/>
+				<figcaption align="middle">Low ks</figcaption>
+			</td>
+			<td>
+				<img src="normal_2pin.png" align="middle" width="400px"/>
+				<figcaption align="middle">Default ks</figcaption>
+			</td>
+			<td>
+				<img src="increase_ks_2pin.png" align="middle" width="400px"/>
+				<figcaption align="middle">High ks</figcaption>
+			</td>
+		</tr>
+	</table>
         <p>
-            Your response goes here.
+            With the lower ks, we see that the cloth sags more which illustrates how gravity increases with a smaller ks value. 
+		In comparison, with a higher ks, the cloth sags less which shows a smaller force of gravity on the cloth. 
         </p>
         <br>
-        
+	<table style="width=100%">
+		<tr>
+			<td>
+				<img src="decrease_density_2pin.png" align="middle" width="400px"/>
+				<figcaption align="middle">Low Density</figcaption>
+			</td>
+			<td>
+				<img src="normal_2pin.png" align="middle" width="400px"/>
+				<figcaption align="middle">Default Density</figcaption>
+			</td>
+			<td>
+				<img src="increase_density_2pin.png" align="middle" width="400px"/>
+				<figcaption align="middle">High Density</figcaption>
+			</td>
+		</tr>
+	</table>
+        <p>
+            With the lower density, we see that the cloth sags less which illustrates how the force of weight decreases with less 
+		density since it is a lighter material now. In comparison, with a higher density, the cloth sags more which shows 
+		a higher force of weight on the cloth since the material itself is heavier. 
+        </p>
+        <br>
+    	<table style="width=100%">
+		<tr>
+			<td>
+				<img src="decrease_damping_2pin.png" align="middle" width="400px"/>
+				<figcaption align="middle">Low Damping</figcaption>
+			</td>
+			<td>
+				<img src="normal_2pin.png" align="middle" width="400px"/>
+				<figcaption align="middle">Default Damping</figcaption>
+			</td>
+			<td>
+				<img src="increase_damping_2pin.png" align="middle" width="400px"/>
+				<figcaption align="middle">High Damping</figcaption>
+			</td>
+		</tr>
+	</table>
+        <p>
+            Damping doesn't effect the final result of the cloth hanging; however it does affect how fast it falls down. This is 
+		harder to see in an image since the main aspect is the movement, but in the image with less damping, more ripples 
+		can be seen due to the faster movement of falling and therefore more internal springs have been set off. In 
+		comparison, with an increase damping, the cloth is falling a lot slower and smoother as if it is lightly being placed 
+		down. 
+        </p>
+        <br>
+	<table style="width=100%">
+		<tr>
+			<td>
+				<img src="normal_4pin_1.png" align="middle" width="400px"/>
+				<figcaption align="middle">4 Pinned Hang View 1</figcaption>
+			</td>
+			<td>
+				<img src="normal_4pin_2.png" align="middle" width="400px"/>
+				<figcaption align="middle">4 Pinned Hang View 2</figcaption>
+			</td>
+		</tr>
+	</table>  
+	<br>
 
         <h3 align="middle">Part 3. Handling collisions with other objects</h3>
         
