@@ -128,11 +128,41 @@
 	<br>
 
         <h3 align="middle">Part 3. Handling collisions with other objects</h3>
-        
+	    
+	    	<table style="width=100%">
+		<tr>
+			<td>
+				<img src="sphere_ks500.png" align="middle" width="400px"/>
+				<figcaption align="middle">ks = 500</figcaption>
+			</td>
+			<td>
+				<img src="sphere_ks5000.png" align="middle" width="400px"/>
+				<figcaption align="middle">ks = 5,000</figcaption>
+			</td>
+			<td>
+				<img src="sphere_ks50000.png" align="middle" width="400px"/>
+				<figcaption align="middle">ks = 50,000</figcaption>
+			</td>
+		</tr>
+	</table>
         <p>
-            Your response goes here.
+            As observed from part 2, the ks value affects how the gravity affects the objects in the scene. 
+		With the smaller ks value of 500, the force with gravity increases as the cloth sags more which 
+		is illustrated in the image with ks = 500. In comparison with the ks = 50,000, the force of 
+		weight from the gravity is less so it seems more flowy and doesn't sag as much. The scene with 
+		ks = 5,000 meets these situations in the middle where is sags from gravity but not too much or 
+		too little in comparison to the others. 
         </p>
         <br>
+
+	<table style="width=100%">
+		<tr>
+			<td>
+				<img src="plane_cloth.png" align="middle" width="400px"/>
+				<figcaption align="middle">Cloth Sitting on the Plane</figcaption>
+			</td>
+	</table>  
+	<br>
     
 
         <h3 align="middle">Part 4. Handling self-collisions</h3>
