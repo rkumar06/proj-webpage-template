@@ -287,7 +287,7 @@
             Shader programs run are isolated but run in parallel. They each are accountable for a part of the graphics pipeline.
 		They go from inputs to outputs. In this project we used vertex and fragment shaders. Vertex shaders transform
 		model-space vertices into world space. They handle the vertex processing stage of the rasterization pipeline.
-		Fragment shaders are responsible for creating lighting effects and applyign colors. They work together to create 
+		Fragment shaders are responsible for creating lighting effects and applying colors. They work together to create 
 		complicated graphics such as the following. 
         </p>
 	
@@ -295,6 +295,8 @@
 		that point. It relies on three variables for lighting: ambient, diffuse, and specular. These parts make up shininess,
 		bouncing light, and constant light respectively.
 	 </p>
+	    
+	    <p> Here is an image rendered with only one lighting component each. </p>
 	 
 	 <table style="width=100%">
 		<tr>
@@ -312,7 +314,7 @@
 			</td>
 		</tr>
 	</table>
-	    
+	    <p> This is what a rendering looks like when all three components come together. </p>
 	 <table style="width=100%">
 		<tr>
 			<td>
@@ -321,6 +323,8 @@
 			</td>
 		</tr>
 	</table>
+	    
+	    <p> The texture shader produced this image and it uses a custom texture! </p>
 	
 	<table style="width=100%">
 		<tr>
@@ -330,7 +334,7 @@
 			</td>
 		</tr>
 	</table>
-	    
+	<p> These images show bump mapping on the cloth and the sphere and then displacement mapping on the sphere. </p>
 	    <table style="width=100%">
 		<tr>
 			<td>
