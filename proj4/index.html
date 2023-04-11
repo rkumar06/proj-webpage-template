@@ -284,8 +284,17 @@
 	<h3 align="middle">Part 5. Shaders</h3>
         
         <p>
-            Your response goes here.
+            Shader programs run are isolated but run in parallel. They each are accountable for a part of the graphics pipeline.
+		They go from inputs to outputs. In this project we used vertex and fragment shaders. Vertex shaders transform
+		model-space vertices into world space. They handle the vertex processing stage of the rasterization pipeline.
+		Fragment shaders are responsible for creating lighting effects and applyign colors. They work together to create 
+		complicated graphics such as the following. 
         </p>
+	
+	<p> Blinn-Phong runs seperate calculations for different parts of an image based on how the lighting and image should look at
+		that point. It relies on three variables for lighting: ambient, diffuse, and specular. These parts make up shininess,
+		bouncing light, and constant light respectively.
+	 </p>
 	    
 	    <table style="width=100%">
 		<tr>
