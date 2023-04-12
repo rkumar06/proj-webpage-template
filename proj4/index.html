@@ -356,23 +356,25 @@
 		<tr>
 			<td>
 				<img src="bump_16.png" align="middle" width="400px"/>
-				<figcaption align="middle">Bump Mapping with -o 16 -a 16 Flag</figcaption>
+				<figcaption align="middle">Bump Mapping with Coarseness of 16</figcaption>
 			</td>
 			<td>
 				<img src="bump_128.png" align="middle" width="400px"/>
-				<figcaption align="middle">Bump Mapping with -o 128 -a 128 Flag</figcaption>
+				<figcaption align="middle">Bump Mapping with Coarseness of 128</figcaption>
 			</td>
 			<td>
 				<img src="displacement_16.png" align="middle" width="400px"/>
-				<figcaption align="middle">Displacement Mapping with -o 16 -a 16 Flag</figcaption>
+				<figcaption align="middle">Displacement Mapping with Coarseness of 16</figcaption>
 			</td>
 			<td>
 				<img src="displacement_128.png" align="middle" width="400px"/>
-				<figcaption align="middle">Displacement Mapping with -o 128 -a 128 Flag</figcaption>
+				<figcaption align="middle">Displacement Mapping with Coarseness of 128</figcaption>
 			</td>
 		</tr>
 	</table>
-	    
+	<p> We think bump shaders are more accurate than displacement shaders at displaying how things really look, like in this example, bricks. There is 
+		not a noticible difference between the images with the high or low coarsness so I think it makes the most sense to use the one
+		that takes less time to render. That would be images with lower coarsenesses. 
 	    <table style="width=100%">
 		<tr>
 			<td>
